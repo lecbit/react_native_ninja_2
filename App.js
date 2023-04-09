@@ -1,7 +1,11 @@
 import { useState } from "react";
 import * as Font from 'expo-font';
 import Home from "./screens/home";
+import ReviewDetails from "./screens/reviewDetails";
 import AppLoading from 'expo-app-loading';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
 
 
 const getFonts = () => Font.loadAsync({
@@ -11,10 +15,17 @@ const getFonts = () => Font.loadAsync({
 
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false)
+  const Stack = createStackNavigator();
 
   if (fontsLoaded) {
     return (
-      <Home />
+      <NavigationContainer>
+        <Stack.Navigator>
+          {/* it automatically adds a navigation prop */}
+          <Stack.Screen name='Home' component={Home} />
+          <Stack.Screen name='Reviews' component={ReviewDetails} />
+        </Stack.Navigator>
+      </NavigationContainer>
     );
   } else {
     return (

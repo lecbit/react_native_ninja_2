@@ -20,10 +20,27 @@ export default function App() {
   if (fontsLoaded) {
     return (
       <NavigationContainer>
-        <Stack.Navigator>
-          {/* it automatically adds a navigation prop */}
-          <Stack.Screen name='Home' component={Home} />
-          <Stack.Screen name='ReviewDetails' component={ReviewDetails} />
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: 'green',
+              height: 60,
+            },
+            headerTintColor: 'red',
+          }}
+        >
+          <Stack.Screen name='Home' component={Home} options={{
+            title: 'GameZone',
+            // headerStyle: {
+            //   backgroundColor: "#eee"
+            // }
+          }} />
+          <Stack.Screen name='ReviewDetails' component={ReviewDetails} options={{
+            title: 'Review Details',
+            // headerStyle: {
+            //   backgroundColor: "#eee"
+            // }
+          }} />
         </Stack.Navigator>
       </NavigationContainer>
     );

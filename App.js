@@ -23,7 +23,7 @@ export default function App() {
         <Stack.Navigator>
           {/* it automatically adds a navigation prop */}
           <Stack.Screen name='Home' component={Home} />
-          <Stack.Screen name='Reviews' component={ReviewDetails} />
+          <Stack.Screen name='ReviewDetails' component={ReviewDetails} />
         </Stack.Navigator>
       </NavigationContainer>
     );
